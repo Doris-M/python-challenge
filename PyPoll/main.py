@@ -24,15 +24,15 @@ with open(csvpath) as csvfile:
             candidateList[row[2]] = candidateList[row[2]] + 1
          # if it not.. 
          else: 
-         # add the candidate to the dictionary and start counting the first vote  
+         # add the candidate to the dictionary and starts counting the first vote  
             candidateList[row[2]] = 1
 
-# funtion that print the name of candidate, total votes in percentage and total votes 
+# funtion that print the name of the candidates, total votes in percentage and total votes 
 def print_pecentages():
     for candidate, total in  candidateList.items():
         print(candidate +': ' + '{:.3%}'.format(total/total_votes) + ' (' + str(total) + ')')     
 
-# funtion that print the name of candidate, total votes in percentage and total votes for a text file format
+# funtion that print the name of the candidates, total votes in percentage and total votes for a text file format
 def print_pecentages_file(myfilename):
     for candidate, total in  candidateList.items():
         myfilename.write(candidate +': ' + '{:.3%}'.format(total/total_votes) + ' (' + str(total) + ')\n')    
@@ -56,7 +56,7 @@ def print_output():
     print('----------------------------')     
 
     # output file
-    # move to the directory wher the output file will be saving ( os.chdir('analysis') )
+    # move to the directory when the output file will be saved ( os.chdir('analysis') )
     os.chdir('analysis')
     myfile=open("election_results.txt",mode="w") 
     myfile.write('Election Results\n')
